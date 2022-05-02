@@ -9,7 +9,7 @@ int MAX_MALLOC;
 #define new 0
 #define $string ^!new?new_string(new):0; 
 #define ____MALLOC_Err_mgs puts("Memory allocation failed");
-#define new_string(n)(string)malloc(MAX_MALLOC=n*sizeof(char))
+#define new_string(n) (string)malloc(MAX_MALLOC=n*sizeof(char))
 
 #define append_string(des, src) \
 des=(string)realloc((string)des, MAX_MALLOC=strlen(des)+strlen(src)+1); \
