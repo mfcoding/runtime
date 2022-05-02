@@ -44,7 +44,7 @@ delete(ptr);}else{____MALLOC_Err_mgs; return 0;}}else{____MALLOC_Err_mgs; return
 #define get_string(des) \
 ____c = 0; while(1){ des[____c] = getchar(); \
 if(des[____c] == '\n'){des[____c]='\0'; break;}else{____c++;} \
-des = realloc((string)des, MAX_MALLOC=____c+1);break;}}if(des==NULL){____MALLOC_Err_mgs;}
+des = realloc((string)des, MAX_MALLOC=____c+1);break;}}if(des==NULL){____MALLOC_Err_mgs; return 0;}
 
 #define sizeof_list(s) sizeof(s)/sizeof(s[0])
 
