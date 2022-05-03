@@ -39,7 +39,7 @@ ____c = i; src = realloc((string)src, MAX_MALLOC=strlen(src)+strlen(ins)+1); \
 if(src!=NULL){ptr = realloc((string)ptr,  MAX_MALLOC-____c); \
 if(ptr!=NULL){strcpy(ptr, src+____c); strcpy(src+____c, ins); \
 strcpy(src+____c+strlen(ins), ptr); \
-delete(ptr);}else{____MALLOC_Err_mgs; return 0;}}else{____MALLOC_Err_mgs; return 0;}
+delete(ptr); ptr=NULL;}else{____MALLOC_Err_mgs; return 0;}}else{____MALLOC_Err_mgs; return 0;}
 
 #define get_string(des) \
 ____c = 0; while(1){ des[____c] = getchar(); \
