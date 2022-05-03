@@ -33,6 +33,14 @@ ____c = 0; while(src[____c]!='\0'){ if(!strncmp(src+____c, rem, strlen(rem))){br
 while(src[____c+strlen(rem)]!='\0'){ src[____c]= src[____c+strlen(rem)]; ____c++;} src[____c] = '\0'; \
 src = (string)realloc((string)src, MAX_MALLOC=____c+1); if(src==NULL){____MALLOC_Err_mgs; return 0;}
 
+char *ptr;
+#define insert_string(src, ins, i) \
+____c = i; src = realloc((string)src, MAX_MALLOC=strlen(src)+strlen(ins)+1); \
+if(src!=NULL){ptr = realloc((string)ptr,  MAX_MALLOC-____c); \
+if(ptr!=NULL){strcpy(ptr, src+____c); strcpy(src+____c, ins); \
+strcpy(src+____c+strlen(ins), ptr); \
+delete(ptr);}else{____MALLOC_Err_mgs; return 0;}}else{____MALLOC_Err_mgs; return 0;}
+
 #define get_string(des) \
 ____c = 0; while(1){ des[____c] = getchar(); \
 if(des[____c] == '\n'){des[____c]='\0'; break;}else{____c++;} \
