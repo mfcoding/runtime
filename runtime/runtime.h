@@ -56,7 +56,6 @@ for(____c = 0; ____c < sizeof_list(lname); ____c++){lname[____c]=new $string;}}
 for(____c = 0; ____c < sizeof_list(lname); ____c++){if(lname[____c] != NULL){delete(lname[____c]);}}
 
 
-
 #define new_short(n)           (short*)malloc(MAX_MALLOC=n*sizeof(short))
 #define new_ushort(n)          (unsigned short*)malloc(MAX_MALLOC=n*sizeof(unsigned short))
 #define new_int(n)             (int*)malloc(MAX_MALLOC=n*sizeof(int))
