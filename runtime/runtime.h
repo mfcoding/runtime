@@ -50,7 +50,7 @@ else{____c++;des=realloc((string)des, MAX_MALLOC=____c+1);if(des==NULL){____MALL
 #define sizeof_list(s) sizeof(s)/sizeof(s[0])
 
 #define init_list(lname, type) \
-if(!strcmp(type,"str")){ \
+if(!strcmp(type,"string")){ \
 for(____c = 0; ____c < sizeof_list(lname); ____c++){lname[____c]=new $string;}}
 
 #define delete_list(lname) \
