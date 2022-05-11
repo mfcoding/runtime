@@ -11,6 +11,7 @@ int MAX_MALLOC;
 #define new_string(n) (string)malloc(MAX_MALLOC=n*sizeof(char))
 #define ____MALLOC_Err_mgs puts("Memory allocation failed");
 #define EXIT__FAILURE 1
+#define EXIT__SUCCESS 0
 
 #define append_string(des, src) \
 des=(string)realloc((string)des, MAX_MALLOC=strlen(des)+strlen(src)+1); \
