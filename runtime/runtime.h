@@ -41,17 +41,17 @@ if(ptr!=NULL){strcpy(ptr, src+____c); strcpy(src+____c, ins); \
 strcpy(src+____c+strlen(ins), ptr); \
 delete(ptr); ptr=NULL;}else{____MALLOC_Err_msg; exit(EXIT__FAILURE);}}else{____MALLOC_Err_msg; exit(EXIT__FAILURE);}
 
-#define reverse_string(des) \
+#define reverse_string(src) \
 ____c = 0; for(int *temp=new_int(1),*start=new_int(1),*end=new_int(1);;) { \
 if(temp==NULL||start==NULL||end==NULL) { ____MALLOC_Err_msg; exit(EXIT__FAILURE); } \
-if(____c == 0){*end=strlen(des)-1;____c++;} \
+if(____c == 0){*end=strlen(src)-1;____c++;} \
 if(____c != 0){for(*start = 0;;++*start,--*end) { \
-*temp = des[*start]; \
-des[*start] = des[*end]; \
-des[*end] = *temp; \
+*temp=src[*start]; \
+src[*start]=src[*end]; \
+src[*end]=*temp; \
 if(*start==*end||*start==*end-1){delete(start);delete(end);delete(temp);break;}}}break;}
 
-#define get_string(des) \
+#define input_string(des) \
 ____c = 0; while(1){ des[____c] = getchar(); \
 if(des[____c] == '\n'){des[____c]='\0'; break;} \
 else{____c++;des=realloc((string)des, MAX_MALLOC=____c+1);if(des==NULL){____MALLOC_Err_msg; return EXIT__FAILURE;}}}
