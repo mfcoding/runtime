@@ -44,7 +44,7 @@ delete(ptr); ptr=NULL;}else{____MALLOC_Err_msg; exit(EXIT__FAILURE);}}else{____M
 #define reverse_string(src) \
 for(int *temp=new_int(1),*start=new_int(1),*end=new_int(1);;) { \
 if(temp==NULL||start==NULL||end==NULL) { ____MALLOC_Err_msg; exit(EXIT__FAILURE); } \
-*end=strlen(src)-1;____c++; \
+*end=strlen(src)-1;\
 for(*start = 0;;++*start,--*end) { \
 *temp=src[*start]; \
 src[*start]=src[*end]; \
