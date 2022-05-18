@@ -52,7 +52,7 @@ if(*start==*end||*start==*end-1){delete(start);delete(end);delete(temp);break;}}
 #define input_string(des) \
 ____c = 0; while(1){ des[____c] = getchar(); \
 if(des[____c] == '\n'){des[____c]='\0'; break;} \
-else{____c++;des=realloc((string)des, MAX_MALLOC=____c+1);if(des==NULL){____MALLOC_Err_msg; return EXIT__FAILURE;}}}
+else{____c++;des=realloc((string)des, MAX_MALLOC=____c+1);if(des==NULL){____MALLOC_Err_msg; exit(EXIT__FAILURE);}}}
 
 #define sizeof_list(s) sizeof(s)/sizeof(s[0])
 
