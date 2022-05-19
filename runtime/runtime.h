@@ -17,10 +17,6 @@ if(des!=NULL){ strcpy(des+strlen(des), src); }else{____MALLOC_Err_msg; exit(EXIT
 
 #define write_string(des, src) append_string(des, src)
 
-#define write_string_lim(des, src) \
-if(strlen(des)+strlen(src) < MAX_MALLOC){ strcpy(des+strlen(des), src);} else { \
-if(des!=NULL) { puts("Not enough allocated memory"); exit(EXIT__FAILURE);}} 
-
 #define replace_string(des, src) \
 des=(string)realloc((string)des, MAX_MALLOC=strlen(src)+1); \
 if(des!=NULL){ strcpy(des, src); }else{____MALLOC_Err_msg; exit(EXIT__FAILURE);}
