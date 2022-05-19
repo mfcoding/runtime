@@ -75,5 +75,6 @@ for(____c = 0; ____c < sizeof_list(lname); ____c++){if(lname[____c] != NULL){del
 #define new_long_double(n)     (long double*)malloc(MAX_MALLOC=n*sizeof(long double))
 
 #define delete(n) n!=NULL?free(n):puts("null pointer can't be freed");
+#define fdelete(n) n!=NULL?fclose(n):puts("null pointer can't be freed");
 
 #endif
