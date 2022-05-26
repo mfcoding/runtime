@@ -35,16 +35,6 @@ if(ptr!=NULL){strcpy(ptr, src+____c); strcpy(src+____c, ins); \
 strcpy(src+____c+strlen(ins), ptr); \
 delete(ptr); ptr=NULL;}else{____MALLOC_Err_msg; exit(EXIT__FAILURE);}}else{____MALLOC_Err_msg; exit(EXIT__FAILURE);}
 
-#define reverse_string(src) \
-for(int *temp=new_int(1),*start=new_int(1),*end=new_int(1);;) { \
-if(temp==NULL||start==NULL||end==NULL) { ____MALLOC_Err_msg; exit(EXIT__FAILURE); } \
-*end=strlen(src)-1;\
-for(*start = 0;;++*start,--*end) { \
-*temp=src[*start]; \
-src[*start]=src[*end]; \
-src[*end]=*temp; \
-if(*start==*end||*start==*end-1){delete(start);delete(end);delete(temp);break;}}break;}
-
 #define input_string(des) \
 ____c = 0; while(1){ des[____c] = getchar(); \
 if(des[____c] == '\n'){des[____c]='\0'; break;} \
