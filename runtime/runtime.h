@@ -3,7 +3,7 @@
 
 typedef char* string;
 
-int MAX_MALLOC;
+static int MAX_MALLOC;
 #define new 1
 #define $string ^!new?new_string(new):0; 
 #define new_string(n) (string)calloc(n, MAX_MALLOC=sizeof(char))
@@ -21,13 +21,13 @@ if(des!=NULL){ strcpy(des+strlen(des), src); }else{MALLOC_ERROR_MSG; exit(EXIT__
 des=(string)realloc((string)des, MAX_MALLOC=strlen(src)+1); \
 if(des!=NULL){ strcpy(des, src); }else{MALLOC_ERROR_MSG; exit(EXIT__FAILURE);}
 
-int ____c;
+static int ____c;
 #define slice_string(src, rem) \
 ____c = 0; while(src[____c]!='\0'){ if(!strncmp(src+____c, rem, strlen(rem))){break;} ____c++;} \
 while(src[____c+strlen(rem)]!='\0'){ src[____c]= src[____c+strlen(rem)]; ____c++;} src[____c] = '\0'; \
 src = (string)realloc((string)src, MAX_MALLOC=____c+1); if(src==NULL){MALLOC_ERROR_MSG; exit(EXIT__FAILURE);}
 
-char *ptr;
+static char *ptr;
 #define insert_string(src, ins, i) \
 ____c = i; src = realloc((string)src, MAX_MALLOC=strlen(src)+strlen(ins)+1); \
 if(src!=NULL){ptr = realloc((string)ptr,  MAX_MALLOC-____c); \
