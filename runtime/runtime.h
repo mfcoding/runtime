@@ -7,7 +7,7 @@ static int MAX_MALLOC;
 #define new 1
 #define $string ^!new?new_string(new):0; 
 #define new_string(n) (string)calloc(n, MAX_MALLOC=sizeof(char))
-#define MALLOC_ERROR_MSG puts("Memory allocation failed");
+#define MALLOC_ERROR_MSG puts("Memory allocation failed")
 #define EXIT__FAILURE 1
 #define EXIT__SUCCESS 0
 
