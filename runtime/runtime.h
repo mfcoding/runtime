@@ -44,7 +44,7 @@ else{____c++;des=realloc((string)des, MAX_MALLOC=____c+1);if(des==NULL){MALLOC_E
 
 #define init_list(lname, type) \
 if(!strcmp(type,"string")){ \
-for(____c = 0; ____c < sizeof_list(lname); ____c++){lname[____c]=new $string;}}
+for(____c = 0; ____c < sizeof_list(lname); ____c++){lname[____c]=new $string; if(lname[____c]==NULL){MALLOC_ERROR_MSG; exit(EXIT__FAILURE);}}}
 
 #define delete_list(lname) \
 for(____c = 0; ____c < sizeof_list(lname); ____c++){if(lname[____c] != NULL){delete(lname[____c]);}}
